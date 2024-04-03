@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ykamboua <ykamboua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 20:56:07 by ykamboua          #+#    #+#             */
-/*   Updated: 2024/03/13 15:17:51 by ykamboua         ###   ########.fr       */
+/*   Created: 2024/03/27 23:21:51 by ykamboua          #+#    #+#             */
+/*   Updated: 2024/04/02 22:34:08 by ykamboua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- 
-// C Program to illustrate the static variable lifetime
-#include <stdio.h>
- 
-// function with static variable
-int fun()
-{
-    static int count = 0;
-    count++;
-    return count;
-}
- 
-int main()
-{
-    printf("%d ", fun());
-    printf("%d ", fun());
-    return 0;
-}
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <stdlib.h>
+# include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr(char *str, char c);
+char	*ft_strdup( char *str);
+void	ft_free(char **str);
+#endif
